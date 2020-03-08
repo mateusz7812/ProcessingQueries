@@ -1,8 +1,5 @@
 ﻿using SO_Queries.Processes;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+using SO_Queries;
 using Xunit;
 
 namespace XUnitTestProject1
@@ -12,7 +9,7 @@ namespace XUnitTestProject1
         [Fact]
         public void TestPause()
         {
-            var process = new Process(5);
+            IProcess process = new Process(5);
 
             process.SetProcessing();
             process.Update(1);

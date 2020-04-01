@@ -10,12 +10,12 @@ namespace SO_Queries
     {
         private static readonly ProcessFactory ProcessFactory = new ProcessFactory();
         private static readonly ProcessListPrototype<Process> ProcessListPrototype = new ProcessListPrototype<Process>();
-        private static readonly List<IQueryStrategy> QueryStrategies = new List<IQueryStrategy>();
-        private static readonly QueryStrategiesFacade QueryService = new QueryStrategiesFacade(ProcessListPrototype, QueryStrategies);
+        private static readonly List<IQueryStrategy> QueueStrategies = new List<IQueryStrategy>();
+        private static readonly QueuesFacade QueueService = new QueuesFacade(ProcessListPrototype, QueueStrategies);
 
         public static void Main(string[] args)
         {
-            QueryStrategies.AddRange(new List<IQueryStrategy> {
+            QueueStrategies.AddRange(new List<IQueryStrategy> {
                 new Fifo(),
                 new RoundRobin(10),
                 new Sjf(),
@@ -26,7 +26,7 @@ namespace SO_Queries
             ProcessFactory.SetCreateTimeReach(0, 10);
             ProcessListPrototype.SetList(ProcessFactory.GenerateProcesses(50));
 
-            var averageProcessingTimeForQueries = QueryService.GetAverageProcessingTimeForQueries();
+            var averageProcessingTimeForQueries = QueueService.GetAverageProcessingTimeForQueries();
             foreach (var (queryName, averageWaitingTime) in averageProcessingTimeForQueries)
             {
                 Console.WriteLine(queryName + " query average waiting: " + averageWaitingTime);

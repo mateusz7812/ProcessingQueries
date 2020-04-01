@@ -7,7 +7,7 @@ using SO_Queries.Processes;
 
 namespace XUnitTestProject1
 {
-    public class RoundRobinQueryTest
+    public class RoundRobinQueueTest
     {
         [Fact]
         public void TestBasic()

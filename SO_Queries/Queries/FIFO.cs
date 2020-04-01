@@ -5,7 +5,7 @@ using SO_Queries.Processes;
 
 namespace SO_Queries.Queries
 {
-    public class Fifo : QueryStrategy
+    public class Fifo : QueueStrategy
     {
         protected readonly List<IProcess> CreatingProcesses = new List<IProcess>();
         protected readonly List<IProcess> ProcessingProcesses = new List<IProcess>();

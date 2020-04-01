@@ -3,14 +3,14 @@ using SO_Queries.Processes;
 
 namespace SO_Queries
 {
-    public class QueryStrategiesFacade
+    public class QueuesFacade
     {
             private ProcessListPrototype<Process> _list;
             private List<IQueryStrategy> _queryStrategies;
 
-            public QueryStrategiesFacade() { }
+            public QueuesFacade() { }
 
-            public QueryStrategiesFacade(ProcessListPrototype<Process> list, List<IQueryStrategy> queryStrategies)
+            public QueuesFacade(ProcessListPrototype<Process> list, List<IQueryStrategy> queryStrategies)
             {
                 SetProcesses(list);
                 SetQueryStrategies(queryStrategies);

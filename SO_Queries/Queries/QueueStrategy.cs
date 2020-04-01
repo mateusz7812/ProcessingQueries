@@ -6,7 +6,7 @@ using SO_Queries.Processes;
 
 namespace SO_Queries.Queries
 {
-    public abstract class QueryStrategy: IQueryStrategy
+    public abstract class QueueStrategy: IQueryStrategy
     {
         public abstract void AddProcesses(List<Process> processes);
         public abstract float GetAverageProcessWaitingTime();

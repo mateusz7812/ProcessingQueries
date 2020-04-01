@@ -8,6 +8,7 @@ namespace SO_Queries
     internal interface IProcessFactory
     {
         void SetTimeReachInSeconds(int min, int max);
+        void SetCreateTimeReach(int min, int max);
         List<Process> GenerateProcesses(int numberOfProcesses);
     }
 }
